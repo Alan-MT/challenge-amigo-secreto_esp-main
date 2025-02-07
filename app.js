@@ -22,10 +22,12 @@ function limpiarCaja() {
 
 
 function sortearAmigo(){
-    let numeroGenerado =  Math.floor(Math.random()*listaAmigos.length)+1;
-    let elementoHTML = document.querySelector('ul');
+    let numeroGenerado =  Math.floor(Math.random()*listaAmigos.length);
+    let elementoHTML = document.querySelector('#resultado');
     let nombreGenerado = listaAmigos[numeroGenerado];
     elementoHTML.innerHTML = (`El amigo secreto es ${nombreGenerado}`);
-    listaAmigos = [];
-    document.querySelector('#sorteo').setAttribute('disable','true');
+// esta ultima parte ayuda a desaparecen el listado de amigos
+    let elementoHTMLlu = document.querySelector('#listaAmigos');
+    elementoHTMLlu.style.display = 'none';
+
 }
